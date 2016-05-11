@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/zippeellii/startuphack-backend/issues"
   },
-  "homepage": "https://github.com/zippeellii/startuphack-backend#readme"
+  "homepage": "https://github.com/zippeellii/startuphack-backend#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
