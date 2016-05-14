@@ -7,7 +7,11 @@ var AdSchema = new Schema({
   image: {type: String, required: false},
   description: {type: String, required: false},
   price: {type: Number, required: false},
-  fromSite: {type: String, required: true}
+  fromSite: {type: String, required: true},
+  city: {type: String, required: false},
+  country: {type: String, required: false},
+  image: {type: String, required: false},
+  url: {type:String, required: true}
 });
 
 module.exports = mongoose.model('Ad', AddSchema);
