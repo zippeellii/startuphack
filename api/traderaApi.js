@@ -48,12 +48,17 @@ function parseResult(response, callback) {
     });
 }
 
-exports.search = function(query, searchId, searchOptions) {
+exports.search = function(searchId, searchOptions) {
 
   searchOptions = searchOptions || {};
 
+
   return new Promise((resolve, reject) => {
 
+    if(searchOptions.country && searchOptions.country != "SE") {
+      resolve(null);
+      return;
+    }
 
     searchOptions.pageNumber = searchOptions.pageNumber || 1;
     searchOptions.minPrice = searchOptions.minPrice || "";
@@ -61,7 +66,6 @@ exports.search = function(query, searchId, searchOptions) {
 
     var body = traderaRequestBody(config.traderaAppId,
       config.traderaAppKey,
-      query,
       searchOptions);
 
     traderaRequest(body, (err, result) => {
@@ -83,6 +87,10 @@ exports.search = function(query, searchId, searchOptions) {
         var isAuction = item.ItemType[0].indexOf("Auction") > -1;
         var price = isNaN(item.BuyItNowPrice[0]) ? item.NextBid[0] : item.BuyItNowPrice[0];
 
+        if(searchOptions.minPrice && price < minPrice) {
+          return null;
+        }
+
         if(isNaN(price)){
           console.log(item);
         } 
@@ -100,11 +108,16 @@ exports.search = function(query, searchId, searchOptions) {
 
         var ad = new AdModel(adBody);
 
+
         ad.save((err, ad) =>{
           if(err) console.log(err);
         });
 
         return ad._id;
+      });
+
+      ads = ads.filter(ad => {
+        return ad
       });
 
       SearchModel.findByIdAndUpdate(searchId,
