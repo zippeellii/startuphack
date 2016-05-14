@@ -106,6 +106,7 @@ exports.search = function(searchId, searchOptions) {
           fromSite: "Tradera",
           url:"http://www.tradera.com/item/" + item.Id[0],
           currency:"SEK",
+          country:"SE",
           isAuction: isAuction
 
         }
