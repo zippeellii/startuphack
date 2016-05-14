@@ -14,6 +14,7 @@ var defaultOptions = {
   pageNumber: 1, 
   entriesPerPage: 10
 };
+
   /*
    *
    */
@@ -56,12 +57,44 @@ function search(query, opt){
 
     ebay.xmlRequest(options, function(err, res){
       results = res.searchResult.item;
-      normaliseAndSaveResult(results, query, function(err, searchObj){
-        console.log("hej");
+
+      if(err){
+        reject(err);
+      }
+      
+      var ads = results.map(item => {
+        //var isAuction = true
+        //var buyItNowPrice = 
+
+        var loc = item.location.split(",");
+
+        var adBody = {
+          name: item.title,
+          image: item.galleryURL,
+          price: item.sellingStatus.currentPrice.amount,
+          fromSite: "Ebay",
+          city: loc[0],
+          country: item.country,
+          url:item.country,
+          currency:item.sellingStatus.currentPrice.currencyId
+        };
+
+        var ad = new AdDb(adBody);
+
+        ad.save();
+
+        return ad._id;
+      });
+
+      var search = new SearchDB();
+      search.searchQuery = query;
+      search.ads = ads;
+      search.createdAt = Date.now();
+      search.save(function(err, result){
         if(err){
-          reject(err);
-        }else {
-          resolve(searchObj);
+          resolve(undefined);
+        }else{
+          resolve(result._id);
         }
       });
     });
@@ -69,45 +102,4 @@ function search(query, opt){
 }
 
 
-function normaliseAndSaveResult(items, query, callback){
-  console.log("hej");
-  async.map(items, saveAd, function(err, res){
-    if(err){
-      callback(err, null);
-    }else {
-      var search = new SearchDB();
-      search.searchQuery = query;
-      search.ads = res;
-      search.save(function(err, searchObj){
-        callback(err, searchObj);
-      });
-    }
-  });
-}
-
-
-function saveAd(item, callback){
-  var loc = item.location.split(",");
-
-  var adBody = {
-    name: item.title,
-    image: item.galleryURL,
-    price: item.sellingStatus.currentPrice,
-    fromSite: "Ebay",
-    city: loc[0],
-    country: item.country,
-    url:item.country
-  };
-
-  var ad          = new AdDb(adBody);
-  ad.save(function(err, createdAd){
-    callback(createdAd)
-  });
-
-}
-search("iPhone", defaultOptions).then(function(response){
-  console.log("hej");
-  console.log(response);
-}, function(error){
-  console.log(error);
-});
+module.exports.search;
