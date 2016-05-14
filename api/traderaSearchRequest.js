@@ -29,5 +29,6 @@ module.exports = function(appId, appKey, options) {
   .replace("[APIKEY]", appKey)
   .replace("[SEARCH]", options.searchQuery)
   .replace("[PAGENUMBER]", options.pageNumber)
+  .replace("[MINPRICE]", options.minPrice)
   .replace("[MAXPRICE]", options.maxPrice);
 }

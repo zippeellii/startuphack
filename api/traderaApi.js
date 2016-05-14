@@ -62,7 +62,7 @@ exports.search = function(searchId, searchOptions) {
 
     searchOptions.pageNumber = searchOptions.pageNumber || 1;
     searchOptions.minPrice = searchOptions.minPrice || 0;
-    searchOptions.minPrice = searchOptions.maxPrice || 0;
+    searchOptions.maxPrice = searchOptions.maxPrice || 0;
 
     var body = traderaRequestBody(config.traderaAppId,
       config.traderaAppKey,
