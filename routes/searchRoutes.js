@@ -3,6 +3,7 @@ var Search = require('../dbmodels/searchModel');
 var Promise = require('bluebird');
 var traderaApi = require('../api/traderaApi');
 var ebayApi = require('../api/ebay-api');
+var Ad = require('../dbmodels/admodel');
 
 module.exports = function(app, express) {
   var router = express.Router();
@@ -25,28 +26,6 @@ module.exports = function(app, express) {
       }
       if(req.query.minPrice) minPrice = req.query.minPrice;
       if(req.query.maxPrice) maxPrice = req.query.maxPrice;
-      //Dummy object
-      var dummyObjects = [];
-      var dummyObject = {
-        name: 'iPhone5',
-        image: 'http://cdn.gsmarena.com/vv/reviewsimg/apple-iphone-5/thumb_.jpg',
-        description: 'Really nice iPhone, not used at all',
-        price: 5000,
-        fromSite: 'www.tradera.se',
-        city: 'Gothenburg',
-        country: 'Sweden',
-        url: 'www.google.com',
-        currency: 'SEK',
-        isAuction: false
-
-      }
-      var traderaQuery = traderaApi.search(req.query.searchQuery);
-      var ebayQuery = ebayApi.search(req.params.searchQuery);
-      //var apiQueries = Promise.all(traderaQuery, ebayQuery);
-
-      //apiQueries.then()
-      dummyObjects[0] = dummyObject;
-      return res.status(200).send(dummyObjects);
 
       Search.findOne({searchQuery: req.query.searchQuery}).populate('ads').exec(function(err, query){
         console.log('Query done');
@@ -54,16 +33,31 @@ module.exports = function(app, express) {
           res.status(400).send('Internal problem');
         }
         if(query){
-          res.status(200).send(query.ads);
+          console.log('Search was found');
+          console.log(query);
+          return res.status(200).send(query);
           //This query has exists and we can use the result
         }
         else{
+          var search = new Search();
+          search.searchQuery = req.query.searchQuery;
+          search.save(function(err, data){
+            console.log('saved');
+            //var traderaQuery = traderaApi.search(req.query.searchQuery, data._id);
+            var ebayQuery = ebayApi.search(req.query.searchQuery, data._id);
+            var apiQueries = Promise.all([ebayQuery]);
 
+            apiQueries.then(function(dataArray){
+              Search.findById(data._id).populate('ads').exec(function(err, model){
+                return res.status(200).send(model.ads);
+              })
+            })
+          })
         }
       });
 
       //Get all the data to the specified search query
-      res.status(200).send('Hello Search!');
+      //res.status(200).send('Hello Search!');
     })
 
   return router;

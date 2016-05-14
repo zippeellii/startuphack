@@ -1,11 +1,11 @@
 
 var request = '<?xml version="1.0" encoding="utf-8"?>' +
 '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
-  '<soap:Header>' + 
+  '<soap:Header>' +
     '<AuthenticationHeader xmlns="http://api.tradera.com">' +
       '<AppId>[APPID]</AppId>' +
       '<AppKey>[APIKEY]</AppKey>' +
-    '</AuthenticationHeader>' + 
+    '</AuthenticationHeader>' +
     '<ConfigurationHeader xmlns="http://api.tradera.com">' +
       '<MaxResultAge>10000</MaxResultAge>' +
     '</ConfigurationHeader>' +
@@ -21,8 +21,6 @@ var request = '<?xml version="1.0" encoding="utf-8"?>' +
 '</soap:Envelope>'
 
 module.exports = function(appId, appKey, search, pageNumber, orderBy) {
-
-  console.log(appId, appKey, search, pageNumber, orderBy);
 
   return request
   .replace("[APPID]", appId)

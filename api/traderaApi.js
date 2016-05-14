@@ -35,7 +35,7 @@ function htmlSpecialCharacters(text) {
 
 function parseResult(response, callback) {
     var data = htmlSpecialCharacters(response);
-    console.log('Parse: ' + data);
+
     parseString(data, (err, parsed) => {
         if(err) {
           callback(err, null);
@@ -48,7 +48,7 @@ function parseResult(response, callback) {
     });
 }
 
-exports.search = function(query, searchOptions) {
+exports.search = function(query, searchId, searchOptions) {
 
   searchOptions = searchOptions || {};
 
@@ -87,7 +87,7 @@ exports.search = function(query, searchOptions) {
           name : item.ShortDescription[0],
           image: item.ThumbnailLink[0],
           price: buyItNowPrice ? item.BuyItNowPrice[0] : item.NextBid[0],
-          fromSite: "tradera",
+          fromSite: "Tradera",
           url:"http://www.tradera.com/item/" + item.Id[0],
           currency:"SEK",
           isAuction: isAuction
@@ -96,27 +96,20 @@ exports.search = function(query, searchOptions) {
 
         var ad = new AdModel(adBody);
 
-        ad.save();
+        ad.save((err, ad) =>{
+          if(err) console.log(err);
+        });
 
         return ad._id;
       });
 
-      var search = new SearchModel({
-        searchQuery: query,
-        ads: ads
-      });
+      console.log(result.length, ads.length);
 
-      search.save((err, res) => {
-        if(err) {
-          resolve(null);
-          return;
-        }
-
-        resolve(res._id);
-
-      });
-
-
+      SearchModel.findByIdAndUpdate(searchId,
+        {$pushAll: {"ads":ads}},
+        (err, search) => {
+          resolve(true);
+        });
     });
 
   });

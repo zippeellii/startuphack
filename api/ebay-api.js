@@ -7,17 +7,20 @@ var async = require('async');
 var appId = "FransHol-Selleri-SBX-8d32f3572-74249cb1";
 var AdDb = require('../dbmodels/admodel.js');
 var SearchDB = require('../dbmodels/searchModel.js');
-var defaultOptions = {
-  minPrice: 0, 
-  maxPrice: 1000, 
-  locatedIn: 'US',
-  pageNumber: 1, 
-  entriesPerPage: 10
-};
 
-function search(query, searchId, opt){
+var exports = module.exports;
+
+exports.search = function(query, searchId, opt){
 
   return new Promise(function(resolve, reject){
+    var defaultOptions = {
+      minPrice: 0,
+      maxPrice: 1000,
+      locatedIn: 'US',
+      pageNumber: 1,
+      entriesPerPage: 10
+    };
+    opt = opt || {};
 
     var minPrice        = opt.minPrice || defaultOptions.minPrice;
     var maxPrice        = opt.maxPrice || defaultOptions.maxPrice;
@@ -58,10 +61,10 @@ function search(query, searchId, opt){
       if(err){
         reject(err);
       }
-      
+
       var ads = results.map(item => {
         //var isAuction = true
-        //var buyItNowPrice = 
+        //var buyItNowPrice =
 
         var loc = item.location.split(",");
 
@@ -73,7 +76,8 @@ function search(query, searchId, opt){
           city: loc[0],
           country: item.country,
           url:item.country,
-          currency:item.sellingStatus.currentPrice.currencyId
+          currency:item.sellingStatus.currentPrice.currencyId,
+          isAuction: false
         };
 
         var ad = new AdDb(adBody);
@@ -83,7 +87,7 @@ function search(query, searchId, opt){
         return ad._id;
       });
 
-      search.findByIdAndUpdate(searchId, {$pushAll: {"ads":ads}},
+      SearchDB.findByIdAndUpdate(searchId, {$pushAll: {"ads":ads}},
         function(err, result){
         if(err){
           resolve(undefined);
@@ -94,6 +98,3 @@ function search(query, searchId, opt){
     });
   });
 }
-
-module.exports.search;
-

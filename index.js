@@ -4,6 +4,9 @@ var app = express();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var http = require('http');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/startuphack');
 
 // configure our app to handle CORS requests
 app.use(function(req, res, next) {

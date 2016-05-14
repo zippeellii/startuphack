@@ -5,7 +5,7 @@ var Schema = mongoose.Schema,
 var SearchSchema = new Schema({
   searchQuery: {type: String, required: true},
   ads: [{type: ObjectId, Ref: 'Ad'}]
-},{timestamps: true});
+});
 
 
 module.exports = mongoose.model('Search', SearchSchema);
