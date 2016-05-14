@@ -56,13 +56,13 @@ exports.search = function(query, searchId, searchOptions) {
 
 
     searchOptions.pageNumber = searchOptions.pageNumber || 1;
-    searchOptions.orderBy = searchOptions.orderBy || "Relevance";
+    searchOptions.minPrice = searchOptions.minPrice || "";
+    searchOptions.minPrice = searchOptions.maxPrice || "";
 
     var body = traderaRequestBody(config.traderaAppId,
       config.traderaAppKey,
       query,
-      searchOptions.pageNumber,
-      searchOptions.orderBy);
+      searchOptions);
 
     traderaRequest(body, (err, result) => {
 
@@ -89,7 +89,7 @@ exports.search = function(query, searchId, searchOptions) {
 
         var adBody = {
           name : item.ShortDescription[0],
-          image: item.ThumbnailLink[0],
+          image: item.ThumbnailLink[0].replace("thumbs", "images"),
           price: price,
           fromSite: "Tradera",
           url:"http://www.tradera.com/item/" + item.Id[0],
