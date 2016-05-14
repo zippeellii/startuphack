@@ -58,9 +58,9 @@ module.exports = function(app, express) {
           if(req.query.maxPrice) search.maxPrice = req.query.maxPrice;
           if(req.query.country) search.country = req.query.country;
           search.save(function(err, data){
-            console.log('saved');
-            var traderaQuery = traderaApi.search(req.query.searchQuery, data._id);
-            var ebayQuery = ebayApi.search(req.query.searchQuery, data._id);
+
+            var traderaQuery = traderaApi.search(data._id, match);
+            var ebayQuery = ebayApi.search(data._id, match);
             var apiQueries = Promise.all([ebayQuery, traderaQuery]);
 
             apiQueries.then(function(dataArray){

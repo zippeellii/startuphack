@@ -10,7 +10,7 @@ var SearchDB = require('../dbmodels/searchModel.js');
 
 var exports = module.exports;
 
-function search(query, searchId, opt){
+exports.search = function(query, searchId, opt){
 
   return new Promise(function(resolve, reject){
     var defaultOptions = {
@@ -56,6 +56,7 @@ function search(query, searchId, opt){
 
 
     ebay.xmlRequest(options, function(err, res){
+      console.log('RES: ' + res);
       results = res.searchResult.item;
       console.log(results);
       if(err){
@@ -63,7 +64,7 @@ function search(query, searchId, opt){
       }
 
       var ads = results.map(item => {
-        
+
       var picture = item.galleryURL;
 
       if(item.pictureURLSuperSize){
@@ -104,7 +105,3 @@ function search(query, searchId, opt){
     });
   });
 }
-
-search("Macbook", 1)
-
-
