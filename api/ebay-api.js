@@ -79,7 +79,7 @@ exports.search = function(searchId, opt){
           fromSite: "Ebay",
           city: loc[0],
           country: item.country,
-          url:item.country,
+          url:item.viewItemURL,
           currency:item.sellingStatus.currentPrice.currencyId,
           isAuction: false
         };
