@@ -16,7 +16,7 @@ var request = '<?xml version="1.0" encoding="utf-8"?>' +
       '[MINPRICE]' +
       '[MAXPRICE]' +
       '[MAXPRICE2]' +
-      '<CategoryId>0</CategoryId>' +
+      '<query>0</query>' +
       '<PageNumber>[PAGENUMBER]</PageNumber>' +
       '<OrderBy>Relevance</OrderBy>' +
       '<ItemCondition>OnlySecondHand</ItemCondition>' +
