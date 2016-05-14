@@ -10,7 +10,7 @@ var SearchDB = require('../dbmodels/searchModel.js');
 
 var exports = module.exports;
 
-exports.search = function(query, searchId, opt){
+exports.search = function(searchId, opt){
 
   return new Promise(function(resolve, reject){
     var defaultOptions = {
@@ -29,7 +29,7 @@ exports.search = function(query, searchId, opt){
     var entriesPerPage  = opt.entriesPerPage || defaultOptions.entriesPerPage
 
     var params = {
-      keywords: [query],
+      keywords: [opt.SearchQuery],
 
       // add additional fields
       outputSelector: ['AspectHistogram'],
@@ -75,7 +75,7 @@ exports.search = function(query, searchId, opt){
           fromSite: "Ebay",
           city: loc[0],
           country: item.country,
-          url:item.country,
+          url:item.viewItemURL,
           currency:item.sellingStatus.currentPrice.currencyId,
           isAuction: false
         };
