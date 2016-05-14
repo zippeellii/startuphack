@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/zippeellii/startuphack-backend#readme",
   "dependencies": {
+    "async": "^2.0.0-rc.4",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "http": "0.0.0",
