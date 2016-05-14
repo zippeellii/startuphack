@@ -8,10 +8,9 @@ var appId = "FransHol-Selleri-SBX-8d32f3572-74249cb1";
 var AdDb = require('../dbmodels/admodel.js');
 var SearchDB = require('../dbmodels/searchModel.js');
 
-
 var exports = module.exports;
 
-exports.search = function(query, opt){
+exports.search = function(query, searchId, opt){
 
   return new Promise(function(resolve, reject){
     var defaultOptions = {
@@ -87,15 +86,12 @@ exports.search = function(query, opt){
         return ad._id;
       });
 
-      var search = new SearchDB();
-      search.searchQuery = query;
-      search.ads = ads;
-      search.createdAt = Date.now();
-      search.save(function(err, result){
+      search.findByIdAndUpdate(searchId, {$pushAll: {"ads":ads}},
+        function(err, result){
         if(err){
           resolve(undefined);
         }else{
-          resolve(result._id);
+          resolve(true);
         }
       });
     });
