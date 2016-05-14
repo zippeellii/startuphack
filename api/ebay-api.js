@@ -24,9 +24,14 @@ exports.search = function(searchId, opt){
 
     var minPrice        = opt.minPrice || defaultOptions.minPrice;
     var maxPrice        = opt.maxPrice || defaultOptions.maxPrice;
-    var locatedIn       = opt.locatedIn || defaultOptions.locatedIn;
+    var locatedIn       = opt.country || defaultOptions.locatedIn;
     var pageNumber      = opt.pageNumber || defaultOptions.pageNumber;
-    var entriesPerPage  = opt.entriesPerPage || defaultOptions.entriesPerPage
+    var entriesPerPage  = opt.entriesPerPage || defaultOptions.entriesPerPage;
+
+
+    if(opt.country == 'ALL'){
+      locatedIn = 'US';
+    }
 
     var params = {
       keywords: [opt.searchQuery],
