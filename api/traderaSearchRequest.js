@@ -22,8 +22,6 @@ var request = '<?xml version="1.0" encoding="utf-8"?>' +
 
 module.exports = function(appId, appKey, search, pageNumber, orderBy) {
 
-  console.log(appId, appKey, search, pageNumber, orderBy);
-
   return request
   .replace("[APPID]", appId)
   .replace("[APIKEY]", appKey)
