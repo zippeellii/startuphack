@@ -76,7 +76,8 @@ exports.search = function(query, searchId, opt){
           city: loc[0],
           country: item.country,
           url:item.country,
-          currency:item.sellingStatus.currentPrice.currencyId
+          currency:item.sellingStatus.currentPrice.currencyId,
+          isAuction: false
         };
 
         var ad = new AdDb(adBody);
@@ -86,7 +87,7 @@ exports.search = function(query, searchId, opt){
         return ad._id;
       });
 
-      search.findByIdAndUpdate(searchId, {$pushAll: {"ads":ads}},
+      SearchDB.findByIdAndUpdate(searchId, {$pushAll: {"ads":ads}},
         function(err, result){
         if(err){
           resolve(undefined);
