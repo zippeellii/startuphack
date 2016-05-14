@@ -83,6 +83,10 @@ exports.search = function(query, searchId, searchOptions) {
         var isAuction = item.ItemType[0].indexOf("Auction") > -1
         var buyItNowPrice = item.ItemType[0] !== "Auction";
 
+        console.log("price: " + buyItNowPrice ? item.BuyItNowPrice[0] : item.NextBid[0]);
+
+
+
         var adBody = {
           name : item.ShortDescription[0],
           image: item.ThumbnailLink[0],
