@@ -91,7 +91,7 @@ exports.search = function(searchId, searchOptions) {
         var isAuction = item.ItemType[0].indexOf("Auction") > -1;
         var price = isNaN(item.BuyItNowPrice[0]) ? item.NextBid[0] : item.BuyItNowPrice[0];
 
-        if(searchOptions.minPrice && price < minPrice) {
+        if(searchOptions.minPrice != 0 && price < searchOptions.minPrice) {
           return null;
         }
 
