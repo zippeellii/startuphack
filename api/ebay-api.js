@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //libs
 var ebay = require('ebay-api');
 var async = require('async');
@@ -15,9 +16,6 @@ var defaultOptions = {
   entriesPerPage: 10
 };
 
-  /*
-   *
-   */
 function search(query, opt){
 
   return new Promise(function(resolve, reject){
@@ -101,5 +99,5 @@ function search(query, opt){
   });
 }
 
-
 module.exports.search;
+
