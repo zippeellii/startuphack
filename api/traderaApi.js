@@ -48,7 +48,7 @@ function parseResult(response, callback) {
     });
 }
 
-exports.search = function(query, searchId, searchOptions) {
+exports.search = function(searchId, searchOptions) {
 
   searchOptions = searchOptions || {};
 
@@ -66,7 +66,6 @@ exports.search = function(query, searchId, searchOptions) {
 
     var body = traderaRequestBody(config.traderaAppId,
       config.traderaAppKey,
-      query,
       searchOptions);
 
     traderaRequest(body, (err, result) => {

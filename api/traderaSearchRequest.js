@@ -24,12 +24,12 @@ var request = '<?xml version="1.0" encoding="utf-8"?>' +
   '</soap:Body>' +
 '</soap:Envelope>'
 
-module.exports = function(appId, appKey, search, options) {
+module.exports = function(appId, appKey, options) {
 
   return request
   .replace("[APPID]", appId)
   .replace("[APIKEY]", appKey)
-  .replace("[SEARCH]", search)
+  .replace("[SEARCH]", options.searchQuery)
   .replace("[PAGENUMBER]", options.pageNumber)
   .replace("[MAXPRICE]", options.maxPrice ? "<BuyItNowPrice>" + options.maxPrice +"</BuyItNowPrice>")
   .replace("[MAXPRICE2]", options.maxPrice ? "<MaxBid>" + options.maxPrice +"</MaxBid>"):
