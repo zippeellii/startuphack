@@ -20,6 +20,8 @@ app.get('/', function(req, res){
   res.send('Hello Wordl!');
 })
 
+app.use('/', './routes/searchRoutes')(app, express)
+
 
 //Start the listening
 http.createServer(app).listen(8080, function(){
