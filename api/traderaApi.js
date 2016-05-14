@@ -68,6 +68,8 @@ exports.search = function(searchId, searchOptions) {
       config.traderaAppKey,
       searchOptions);
 
+
+
     traderaRequest(body, (err, result) => {
 
 
@@ -78,6 +80,7 @@ exports.search = function(searchId, searchOptions) {
         return;
       }
 
+      console.log(result);
 
       if(!result) {
         resolve(null);
