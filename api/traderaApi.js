@@ -69,10 +69,9 @@ exports.search = function(searchId, searchOptions) {
       searchOptions);
 
 
+    console.log(body);
 
     traderaRequest(body, (err, result) => {
-
-
 
       if(err) {
         console.log("tradera Error", err);
@@ -144,6 +143,7 @@ function traderaRequest(body, callback) {
 
   request.post(options, (error, response, body) => {
 
+    console.log("tradera response", error, response);
     if(error || response.statusCode != 200) {
       callback(error, null);
     }
