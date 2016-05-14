@@ -4,6 +4,7 @@ var request = require('request')
 var config = require("../config")
 
 var traderaRequest = require('./traderaSearchRequest')
+var AdModel = requure('../dbmodels/admodel')
 
 var post_options = {
       host: 'http://api.tradera.com',
@@ -59,7 +60,7 @@ function search(query, pageNumber, orderBy, callback) {
       return;
     }
 
-    
+
   })
 
 }
