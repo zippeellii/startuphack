@@ -10,9 +10,10 @@ var AdSchema = new Schema({
   fromSite: {type: String, required: true},
   city: {type: String, required: false},
   country: {type: String, required: false},
-  image: {type: String, required: false},
   url: {type: String, required: true},
-  currency: {type: String, required: false, enum: ['USD', 'SEK', 'UNKNOWN']}
+  currency: {type: String, required: false, enum: ['USD', 'SEK', 'UNKNOWN']},
+  isAuction: {type: Boolean, required: true},
+  auctionPrice: {type: Number, required: false}
 });
 
 
