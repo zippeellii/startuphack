@@ -27,7 +27,7 @@ module.exports = function(app, express) {
       if(req.query.minPrice) minPrice = req.query.minPrice;
       if(req.query.maxPrice) maxPrice = req.query.maxPrice;
 
-      Search.findOne({searchQuery: req.query.searchQuery}).populate('ads').exec(function(err, query){
+      Search.findOne({searchQuery: req.query.searchQuery}).populate({path: 'ads', model: 'Ad'}).exec(function(err, query){
         console.log('Query done');
         if(err){
           res.status(400).send('Internal problem');
@@ -35,7 +35,7 @@ module.exports = function(app, express) {
         if(query){
           console.log('Search was found');
           console.log(query);
-          return res.status(200).send(query);
+          return res.status(200).send(query.ads);
           //This query has exists and we can use the result
         }
         else{
@@ -43,12 +43,12 @@ module.exports = function(app, express) {
           search.searchQuery = req.query.searchQuery;
           search.save(function(err, data){
             console.log('saved');
-            //var traderaQuery = traderaApi.search(req.query.searchQuery, data._id);
+            var traderaQuery = traderaApi.search(req.query.searchQuery, data._id);
             var ebayQuery = ebayApi.search(req.query.searchQuery, data._id);
-            var apiQueries = Promise.all([ebayQuery]);
+            var apiQueries = Promise.all([ebayQuery, traderaQuery]);
 
             apiQueries.then(function(dataArray){
-              Search.findById(data._id).populate('ads').exec(function(err, model){
+              Search.findById(data._id).populate({path: 'ads', model: 'Ad'}).exec(function(err, model){
                 return res.status(200).send(model.ads);
               })
             })
