@@ -80,17 +80,17 @@ exports.search = function(query, searchId, searchOptions) {
 
       var ads = result.map(item => {
 
-        var isAuction = item.ItemType[0].indexOf("Auction") > -1
-        var buyItNowPrice = item.ItemType[0] !== "Auction";
+        var isAuction = item.ItemType[0].indexOf("Auction") > -1;
+        var price = isNaN(item.BuyItNowPrice[0]) ? item.NextBid[0] : item.BuyItNowPrice[0];
 
-        console.log("price: " + buyItNowPrice ? item.BuyItNowPrice[0] : item.NextBid[0]);
-
-
+        if(isNaN(price)){
+          console.log(item);
+        } 
 
         var adBody = {
           name : item.ShortDescription[0],
           image: item.ThumbnailLink[0],
-          price: buyItNowPrice ? item.BuyItNowPrice[0] : item.NextBid[0],
+          price: price,
           fromSite: "Tradera",
           url:"http://www.tradera.com/item/" + item.Id[0],
           currency:"SEK",
@@ -106,8 +106,6 @@ exports.search = function(query, searchId, searchOptions) {
 
         return ad._id;
       });
-
-      console.log(result.length, ads.length);
 
       SearchModel.findByIdAndUpdate(searchId,
         {$pushAll: {"ads":ads}},
