@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/zippeellii/startuphack-backend#readme",
   "dependencies": {
+    "bluebird": "^3.3.5",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "http": "0.0.0",
@@ -24,6 +25,7 @@
     "morgan": "^1.7.0"
   },
   "devDependencies": {
-    "ebay-api": "^1.13.0"
+    "ebay-api": "^1.13.0",
+    "request": "^2.72.0"
   }
 }
