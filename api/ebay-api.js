@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //libs
 var ebay = require('ebay-api');
 var async = require('async');
@@ -16,7 +15,7 @@ var defaultOptions = {
   entriesPerPage: 10
 };
 
-function search(query, opt){
+function search(query, searchId, opt){
 
   return new Promise(function(resolve, reject){
 
@@ -84,15 +83,12 @@ function search(query, opt){
         return ad._id;
       });
 
-      var search = new SearchDB();
-      search.searchQuery = query;
-      search.ads = ads;
-      search.createdAt = Date.now();
-      search.save(function(err, result){
+      search.findByIdAndUpdate(searchId, {$pushAll: {"ads":ads}},
+        function(err, result){
         if(err){
           resolve(undefined);
         }else{
-          resolve(result._id);
+          resolve(true);
         }
       });
     });
