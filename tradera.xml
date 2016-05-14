@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <SearchResponse xmlns="http://api.tradera.com">
+            <SearchResult>
+                <TotalNumberOfItems>19351</TotalNumberOfItems>
+                <TotalNumberOfPages>388</TotalNumberOfPages>
+                <Items>
+                    <Id>257342708</Id>
+                    <ShortDescription>Iphone 5c blå</ShortDescription>
+                    <BuyItNowPrice>1300</BuyItNowPrice>
+                    <SellerId>3042079</SellerId>
+                    <SellerAlias>Volvomanen91</SellerAlias>
+                    <MaxBid>1300</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/023/227623023_86273510-851a-4196-b43b-1ad7f2b12aec.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-06-03T08:40:08.27</EndDate>
+                    <NextBid>1300</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>PureBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257891509</Id>
+                    <ShortDescription>iPhone 5S, rymdgrå</ShortDescription>
+                    <BuyItNowPrice>3000</BuyItNowPrice>
+                    <SellerId>3812023</SellerId>
+                    <SellerAlias>Costerman</SellerAlias>
+                    <MaxBid>1200</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/545/228029545_832011bf-850e-4690-940b-68b426717263.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-05-27T10:21:55.793</EndDate>
+                    <NextBid>1200</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257926186</Id>
+                    <ShortDescription>Fri frakt--Tre låst iPhone 4S---16Gb Vit låst till 3 begagnad</ShortDescription>
+                    <BuyItNowPrice>719</BuyItNowPrice>
+                    <SellerId>3261137</SellerId>
+                    <SellerAlias>p_gm</SellerAlias>
+                    <MaxBid>699</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/081/228056081_7d5b2ad3-b0d6-4487-8ea1-7e3e9a9d41b8.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-05-16T21:41:55.567</EndDate>
+                    <NextBid>699</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257861570</Id>
+                    <ShortDescription>Iphone 6s 16gb space grey NY!</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4014320</SellerId>
+                    <SellerAlias>Kentaw79</SellerAlias>
+                    <MaxBid>1050</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/869/228006869_5222d50f-188b-4d2a-87b2-120ef5fba107.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-05-26T19:40:34.754</EndDate>
+                    <NextBid>1075</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257690118</Id>
+                    <ShortDescription>iPhone 4S</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>153124</SellerId>
+                    <SellerAlias>Bubbon</SellerAlias>
+                    <MaxBid>515</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/308/227875308_1c10a485-b6a2-4666-8f57-3efe01a1d840.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-05-15T22:37:24.947</EndDate>
+                    <NextBid>525</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257584563</Id>
+                    <ShortDescription>Iphone 5s 16gb vit /guld toppskick</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3642912</SellerId>
+                    <SellerAlias>spiken10025</SellerAlias>
+                    <MaxBid>1625</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/978/227798978_ef65fa5a-b87c-4f26-bcea-a0915a7e1fb9.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-05-15T18:46:24.122</EndDate>
+                    <NextBid>1650</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257906661</Id>
+                    <ShortDescription>Iphone 6s 64gb</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4002422</SellerId>
+                    <SellerAlias>Kyltek1</SellerAlias>
+                    <MaxBid>2600</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/493/228040493_62a54014-931b-4a64-a95d-c4b48e6f7992.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-05-16T17:04:10.324</EndDate>
+                    <NextBid>2650</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257517943</Id>
+                    <ShortDescription>I Phone 4s Nyligen upplåst för 350 kr</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3658535</SellerId>
+                    <SellerAlias>Jenniflower</SellerAlias>
+                    <MaxBid>600</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/497/227752497_4dd8487c-cb69-4f39-8636-dbc32de00097.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.90000009536743</SellerDsrAverage>
+                    <EndDate>2016-05-14T16:49:19.449</EndDate>
+                    <NextBid>610</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257639383</Id>
+                    <ShortDescription>Ny vit Iphone 4, 8 gb.</ShortDescription>
+                    <BuyItNowPrice>899</BuyItNowPrice>
+                    <SellerId>3241359</SellerId>
+                    <SellerAlias>BaAzZe</SellerAlias>
+                    <MaxBid>799</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/323/227115323_05b1a7ab-5c63-4d82-b831-432d8f596ac4.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.90000009536743</SellerDsrAverage>
+                    <EndDate>2016-05-16T11:26:13.197</EndDate>
+                    <NextBid>799</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>251824619</Id>
+                    <ShortDescription>Mobilladdare Guld, för iPhone eller Samsung, valfri gravyr ingår!</ShortDescription>
+                    <BuyItNowPrice>267</BuyItNowPrice>
+                    <SellerId>3240205</SellerId>
+                    <SellerAlias>bilanciabroby</SellerAlias>
+                    <MaxBid>267</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/956/223298956_1a44b3e0-cc1c-4e30-902e-8ad5ffa0b61e.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2036-02-15T10:38:14</EndDate>
+                    <NextBid>267</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>ShopItem</ItemType>
+                </Items>
+                <Items>
+                    <Id>257646934</Id>
+                    <ShortDescription>Iphone 5s 64 gb, mycket fint skick. Olåst</ShortDescription>
+                    <BuyItNowPrice>2599</BuyItNowPrice>
+                    <SellerId>3430613</SellerId>
+                    <SellerAlias>blgedaniel</SellerAlias>
+                    <MaxBid>2199</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/369/227843369_3d8d0724-6600-4e84-ba9c-ce328b368ef5.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.90000009536743</SellerDsrAverage>
+                    <EndDate>2016-05-14T14:20:19.879</EndDate>
+                    <NextBid>2199</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257857617</Id>
+                    <ShortDescription>FRI FRAKT / Olåst Iphone 6 plus 64GB / silver / kvitto &amp; garanti / Lågt utrop</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3570074</SellerId>
+                    <SellerAlias>toni.m</SellerAlias>
+                    <MaxBid>531</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/752/228003752_1afa05a9-51c5-46c1-88e9-f849979650ac.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.90000009536743</SellerDsrAverage>
+                    <EndDate>2016-05-17T22:00:00</EndDate>
+                    <NextBid>541</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257469374</Id>
+                    <ShortDescription>Iphone 5G 16GB</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3784305</SellerId>
+                    <SellerAlias>se.hu</SellerAlias>
+                    <MaxBid>1300</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/712/227717712_73460433-5914-41cf-9fb3-6d2284fe124a.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.90000009536743</SellerDsrAverage>
+                    <EndDate>2016-05-20T14:28:16.283</EndDate>
+                    <NextBid>1325</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257523860</Id>
+                    <ShortDescription>iPhone SE gold 16gb olåst</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3259115</SellerId>
+                    <SellerAlias>Lolinon</SellerAlias>
+                    <MaxBid>4100</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/373/227418373_be5acd46-d3b5-4896-87e0-f7d74c18c664.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.80000019073486</SellerDsrAverage>
+                    <EndDate>2016-05-14T18:46:35.148</EndDate>
+                    <NextBid>4150</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>251824765</Id>
+                    <ShortDescription>Mobilladdare Lila, för iPhone eller Samsung, valfri gravyr ingår!</ShortDescription>
+                    <BuyItNowPrice>267</BuyItNowPrice>
+                    <SellerId>3240205</SellerId>
+                    <SellerAlias>bilanciabroby</SellerAlias>
+                    <MaxBid>267</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/069/223299069_2683c39f-862c-4eea-9788-32c93cb94b4d.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2036-02-15T10:40:22</EndDate>
+                    <NextBid>267</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>ShopItem</ItemType>
+                </Items>
+                <Items>
+                    <Id>257758160</Id>
+                    <ShortDescription>iPhone 5s Silver 16 GB Ny Oöppnad förpackning Certified Refurbished</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3964932</SellerId>
+                    <SellerAlias>rullskidan</SellerAlias>
+                    <MaxBid>365</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/470/227927470_be9d08b0-36fd-40e0-ab90-e31a44818ba6.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-22T21:00:00</EndDate>
+                    <NextBid>375</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257779299</Id>
+                    <ShortDescription>Defekt iPhone 6 Guld 16gb</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4206428</SellerId>
+                    <SellerAlias>Alexandraagh</SellerAlias>
+                    <MaxBid>1435</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/616/227942616_0828265f-3175-4f7f-aa9c-a60d4aba3fa5.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-18T14:45:05.98</EndDate>
+                    <NextBid>1460</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257693772</Id>
+                    <ShortDescription>Iphone 6 plus 64 GB OLÅST</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>549879</SellerId>
+                    <SellerAlias>mirrrem</SellerAlias>
+                    <MaxBid>2999</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/912/227877912_9a3dfca6-35a7-45f9-a459-9edd81061627.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-16T23:46:32.129</EndDate>
+                    <NextBid>3049</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257598108</Id>
+                    <ShortDescription>Iphone 5 16GB Vit (Telia/Halebop)</ShortDescription>
+                    <BuyItNowPrice>1599</BuyItNowPrice>
+                    <SellerId>3835740</SellerId>
+                    <SellerAlias>FatimaD89</SellerAlias>
+                    <MaxBid>1399</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/550/227809550_6cc85de3-8245-4db4-b107-ceee3ef0f62e.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.80000019073486</SellerDsrAverage>
+                    <EndDate>2016-05-15T20:06:02.355</EndDate>
+                    <NextBid>1399</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>251824578</Id>
+                    <ShortDescription>Mobilladdare Guld, för iPhone eller Samsung!</ShortDescription>
+                    <BuyItNowPrice>195</BuyItNowPrice>
+                    <SellerId>3240205</SellerId>
+                    <SellerAlias>bilanciabroby</SellerAlias>
+                    <MaxBid>195</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/921/223298921_bf366fe6-8f48-4321-8334-1ec18bded0d5.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2036-02-15T10:37:18</EndDate>
+                    <NextBid>195</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>ShopItem</ItemType>
+                </Items>
+                <Items>
+                    <Id>257767968</Id>
+                    <ShortDescription>iPhone 6 - 128 GB - Ny, oanvänd och olåst</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>914947</SellerId>
+                    <SellerAlias>Harry Lockhart</SellerAlias>
+                    <MaxBid>4250</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/146/227934146_02ca9606-bbf3-4fd2-b34a-a03cebd6d918.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-14T10:09:26.193</EndDate>
+                    <NextBid>4300</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257891455</Id>
+                    <ShortDescription>Iphone 6s 64g svart</ShortDescription>
+                    <BuyItNowPrice>6000</BuyItNowPrice>
+                    <SellerId>2312547</SellerId>
+                    <SellerAlias>banjo_</SellerAlias>
+                    <MaxBid>4501</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/498/228029498_6293c803-9302-451a-9c53-77416ea4fd0f.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-20T10:20:02.277</EndDate>
+                    <NextBid>4501</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257759455</Id>
+                    <ShortDescription>iPhone 5s Guld 16 GB Nyskick</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3964932</SellerId>
+                    <SellerAlias>rullskidan</SellerAlias>
+                    <MaxBid>471</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/371/227928371_a3743cf9-3f0b-49ce-b0da-2cdcbad02832.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-22T21:00:00</EndDate>
+                    <NextBid>481</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257655655</Id>
+                    <ShortDescription>iPhone 6 plus 128GB helt ny</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>1054976</SellerId>
+                    <SellerAlias>denaa</SellerAlias>
+                    <MaxBid>4207</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/364/227849364_fba8bc6f-df49-4b1f-87e9-a573634e1bcc.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.80000019073486</SellerDsrAverage>
+                    <EndDate>2016-05-15T17:33:18.753</EndDate>
+                    <NextBid>4257</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>256059387</Id>
+                    <ShortDescription>iPhone 3GS 16GB NYA Back+Ram+LCD Skärm</ShortDescription>
+                    <BuyItNowPrice>350</BuyItNowPrice>
+                    <SellerId>3863927</SellerId>
+                    <SellerAlias>Fadokol</SellerAlias>
+                    <MaxBid>350</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/762/226656762_c7443bdf-aa56-4a6e-a17c-572f1416bb86.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-05-15T20:05:07.29</EndDate>
+                    <NextBid>350</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>PureBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257477824</Id>
+                    <ShortDescription>IPHONE LADDKABEL</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4202159</SellerId>
+                    <SellerAlias>Willex25</SellerAlias>
+                    <MaxBid>40</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/733/227723733_dc7c1f75-407f-4de4-bb60-8fe56a89289d.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-20T18:18:11.261</EndDate>
+                    <NextBid>40</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257712741</Id>
+                    <ShortDescription>iphone 6s plus 16 gb gold</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4145616</SellerId>
+                    <SellerAlias>Krillebo</SellerAlias>
+                    <MaxBid>2572</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/725/227891725_4b802384-7b5a-4e8b-a743-3ca16ff64503.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-17T14:06:11.787</EndDate>
+                    <NextBid>2622</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257850141</Id>
+                    <ShortDescription>Iphone 4S inkl laddare, 16GB</ShortDescription>
+                    <BuyItNowPrice>1289</BuyItNowPrice>
+                    <SellerId>3309048</SellerId>
+                    <SellerAlias>kessy65</SellerAlias>
+                    <MaxBid>1051</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/124/227998124_d1e9b20c-daf9-489f-a634-50a26ed5afe5.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.80000019073486</SellerDsrAverage>
+                    <EndDate>2016-05-15T16:16:53.137</EndDate>
+                    <NextBid>1051</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257828871</Id>
+                    <ShortDescription>iPhone 5 32GB</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>232500</SellerId>
+                    <SellerAlias>denjohan</SellerAlias>
+                    <MaxBid>430</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/970/227979970_b305cef2-6c1b-4359-ae6c-bfd0af6dda51.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-19T11:15:29.29</EndDate>
+                    <NextBid>440</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>256016331</Id>
+                    <ShortDescription>iPhone 6s  64 GB   Heltny   Olåst  ,oöppnad kvitto, garante  .</ShortDescription>
+                    <BuyItNowPrice>6700</BuyItNowPrice>
+                    <SellerId>3459624</SellerId>
+                    <SellerAlias>Bekax</SellerAlias>
+                    <MaxBid>6700</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/656/226625656_bd721249-2ca9-48a8-89b3-7a3e3b1eb4d8.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2016-05-15T00:27:14.3</EndDate>
+                    <NextBid>6700</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>PureBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257787837</Id>
+                    <ShortDescription>Iphone 5C 8G Olåst</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>1782838</SellerId>
+                    <SellerAlias>varmmjolk2</SellerAlias>
+                    <MaxBid>630</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/833/227948833_58cf53a9-c263-4e8c-9ab4-6446d4949739.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-15T18:17:10.51</EndDate>
+                    <NextBid>640</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257629240</Id>
+                    <ShortDescription>iPhone 5 s 16gb silver oöppnat.</ShortDescription>
+                    <BuyItNowPrice>3200</BuyItNowPrice>
+                    <SellerId>3843533</SellerId>
+                    <SellerAlias>RasAbo</SellerAlias>
+                    <MaxBid>2650</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/159/227831159_ac8fb31e-5790-4ece-9b2f-2d8fe49be243.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-15T00:36:23.36</EndDate>
+                    <NextBid>2650</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257593653</Id>
+                    <ShortDescription>Olåst iPhone 6 16Gb Grå / Space gray i absolut nyskick!</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3066072</SellerId>
+                    <SellerAlias>mikaelmork</SellerAlias>
+                    <MaxBid>3350</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/226/227806226_2af08c2d-43d7-4fae-a5c5-8ed3adeb6d23.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-15T19:45:04.411</EndDate>
+                    <NextBid>3400</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257732370</Id>
+                    <ShortDescription>Rose Gold Ultra-thin Shockproof Armor Back Case Cover for Apple iPhone 6 4.7"</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4197415</SellerId>
+                    <SellerAlias>Qiang1002</SellerAlias>
+                    <MaxBid>69</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/737/227907737_115bb519-ac4e-47b1-949e-965166f92384.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-15T18:44:29.574</EndDate>
+                    <NextBid>69</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>251824533</Id>
+                    <ShortDescription>Mobilladdare Cerise för iPhone eller Samsung, valfri gravyr ingår!</ShortDescription>
+                    <BuyItNowPrice>267</BuyItNowPrice>
+                    <SellerId>3240205</SellerId>
+                    <SellerAlias>bilanciabroby</SellerAlias>
+                    <MaxBid>267</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/887/223298887_cdf15da3-cef5-484c-a2c3-3376a94d895e.jpg</ThumbnailLink>
+                    <SellerDsrAverage>5</SellerDsrAverage>
+                    <EndDate>2036-02-15T10:36:11</EndDate>
+                    <NextBid>267</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>ShopItem</ItemType>
+                </Items>
+                <Items>
+                    <Id>257856866</Id>
+                    <ShortDescription>iphone 5s 16GB vit/guld</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>2021092</SellerId>
+                    <SellerAlias>sussi_l</SellerAlias>
+                    <MaxBid>2</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/193/228003193_7f4e21da-8008-4b1f-bc5d-b7d354de9282.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-26T18:40:43.644</EndDate>
+                    <NextBid>3</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257715670</Id>
+                    <ShortDescription>Oöppnad iPhone 6s, 128GB, space Grey</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3116165</SellerId>
+                    <SellerAlias>markmakki</SellerAlias>
+                    <MaxBid>5100</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/926/227893926_50ece2b2-b7c4-4c89-9413-a38eeb1c8889.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-15T15:18:28.009</EndDate>
+                    <NextBid>5200</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257912506</Id>
+                    <ShortDescription>Iphone 5 svart låst till Telia med laddare</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>926836</SellerId>
+                    <SellerAlias>Mårten.$</SellerAlias>
+                    <MaxBid>500</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/969/228044969_e48335a9-a5c1-468d-b133-c4ee6b8abade.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-22T19:05:37.056</EndDate>
+                    <NextBid>500</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257819722</Id>
+                    <ShortDescription>iphone 4 skal, passar till 4s med, snabb leveranstid</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3900541</SellerId>
+                    <SellerAlias>Ellias2015</SellerAlias>
+                    <MaxBid>45</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/068/226469068_675085b0-cd44-40f1-99f0-e594f9e2eddb.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-15T00:22:52.011</EndDate>
+                    <NextBid>45</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>251819957</Id>
+                    <ShortDescription>Flip stand case iPhone 5 - Brun</ShortDescription>
+                    <BuyItNowPrice>179</BuyItNowPrice>
+                    <SellerId>979070</SellerId>
+                    <SellerAlias>Gnurf-Shoppen</SellerAlias>
+                    <MaxBid>179</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/469/223295469_6bd65699-3c8f-491b-9f70-f5e2a4b32866.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.90000009536743</SellerDsrAverage>
+                    <EndDate>2036-04-07T11:05:08</EndDate>
+                    <NextBid>179</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>ShopItem</ItemType>
+                </Items>
+                <Items>
+                    <Id>257418822</Id>
+                    <ShortDescription>Silver Ultra-Thin Electroplate Hard Back Case Cover for Apple iPhone 6 6S</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4193214</SellerId>
+                    <SellerAlias>Caicheng</SellerAlias>
+                    <MaxBid>89</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/017/227680017_df8ce6d9-ebf2-412f-9636-ea5fa756a098.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-19T16:08:36.42</EndDate>
+                    <NextBid>89</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257884747</Id>
+                    <ShortDescription>Iphone 6 64 gb Silver</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>462745</SellerId>
+                    <SellerAlias>ankii123</SellerAlias>
+                    <MaxBid>2500</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/941/228024941_06226501-081d-46eb-bbef-640758f61e1a.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-20T01:27:35.059</EndDate>
+                    <NextBid>2550</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257793604</Id>
+                    <ShortDescription>Iphone 5S vit Olåst</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4169076</SellerId>
+                    <SellerAlias>Alrefai</SellerAlias>
+                    <MaxBid>560</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/528/227953528_b3ae402e-213c-4c1e-ac3d-d9db850214f8.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-25T19:33:10.27</EndDate>
+                    <NextBid>570</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257098059</Id>
+                    <ShortDescription>Iphone 4s</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4164958</SellerId>
+                    <SellerAlias>Nicogirl93</SellerAlias>
+                    <MaxBid>525</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/626/227444626_7e194135-8730-4a67-9df9-a38334ec89c9.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-15T11:09:32.553</EndDate>
+                    <NextBid>535</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>252969927</Id>
+                    <ShortDescription>iPhone 5 16GB Vit|Toppskick| Tre / Hallon / WiFog | Garanti 3 mån_4767</ShortDescription>
+                    <BuyItNowPrice>1888</BuyItNowPrice>
+                    <SellerId>3313388</SellerId>
+                    <SellerAlias>MDshop</SellerAlias>
+                    <MaxBid>1888</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/473/224200473_eb0e59cf-d670-43eb-970d-467c0c21ca4f.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.90000009536743</SellerDsrAverage>
+                    <EndDate>2036-04-21T20:22:02</EndDate>
+                    <NextBid>1888</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>ShopItem</ItemType>
+                </Items>
+                <Items>
+                    <Id>257863546</Id>
+                    <ShortDescription>iPhone 6 64gb olåst</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>333918</SellerId>
+                    <SellerAlias>Deejvid</SellerAlias>
+                    <MaxBid>498</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/409/228008409_67010f77-279b-402f-8d4f-541c406b91b7.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-17T20:02:56.259</EndDate>
+                    <NextBid>508</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257863250</Id>
+                    <ShortDescription>fraktfri olåst Iphone 6 plus 64GB apple / silver / kvitto &amp; garanti / Lågt utrop</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>3570074</SellerId>
+                    <SellerAlias>toni.m</SellerAlias>
+                    <MaxBid>3550</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/179/228008179_58690296-a1c4-4b76-9ecd-dc2467961988.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.80000019073486</SellerDsrAverage>
+                    <EndDate>2016-05-17T22:00:00</EndDate>
+                    <NextBid>3600</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>AuctionWithBuyItNow</ItemType>
+                </Items>
+                <Items>
+                    <Id>257856546</Id>
+                    <ShortDescription>iphone 5s 16BG vit/guld</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>2021092</SellerId>
+                    <SellerAlias>sussi_l</SellerAlias>
+                    <MaxBid>2</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/934/228002934_b0bff6d2-2f91-4307-8ce3-0c643932dfa4.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-26T18:35:02.258</EndDate>
+                    <NextBid>3</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257777889</Id>
+                    <ShortDescription>iPhone 6 16gb Space Grey</ShortDescription>
+                    <BuyItNowPrice xsi:nil="true" />
+                    <SellerId>4082366</SellerId>
+                    <SellerAlias>JohnGuidetti</SellerAlias>
+                    <MaxBid>2000</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/610/227941610_7205daa6-3632-4e76-b27c-aaa848fbf93f.jpg</ThumbnailLink>
+                    <SellerDsrAverage>0</SellerDsrAverage>
+                    <EndDate>2016-05-18T14:10:35.849</EndDate>
+                    <NextBid>2025</NextBid>
+                    <HasBids>true</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>Auction</ItemType>
+                </Items>
+                <Items>
+                    <Id>257051273</Id>
+                    <ShortDescription>iPhone 6 PLUS 16GB Svart | TOPPskick | Olåst | Garanti 3 mån_8688</ShortDescription>
+                    <BuyItNowPrice>4999</BuyItNowPrice>
+                    <SellerId>3313388</SellerId>
+                    <SellerAlias>MDshop</SellerAlias>
+                    <MaxBid>4999</MaxBid>
+                    <ThumbnailLink>http://img.tradera.net/thumbs/467/227414467_0ea04387-0be8-4c5a-8238-b430090616b3.jpg</ThumbnailLink>
+                    <SellerDsrAverage>4.90000009536743</SellerDsrAverage>
+                    <EndDate>2036-05-04T17:26:06</EndDate>
+                    <NextBid>4999</NextBid>
+                    <HasBids>false</HasBids>
+                    <IsEnded>false</IsEnded>
+                    <ItemType>ShopItem</ItemType>
+                </Items>
+            </SearchResult>
+        </SearchResponse>
+    </soap:Body>
+</soap:Envelope>
