@@ -89,7 +89,7 @@ exports.search = function(query, searchId, searchOptions) {
 
         var adBody = {
           name : item.ShortDescription[0],
-          image: item.ThumbnailLink[0],
+          image: item.ThumbnailLink[0].replace("thumbs", "images"),
           price: price,
           fromSite: "Tradera",
           url:"http://www.tradera.com/item/" + item.Id[0],
