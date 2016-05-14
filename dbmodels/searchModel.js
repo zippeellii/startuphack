@@ -4,8 +4,7 @@ var Schema = mongoose.Schema,
 
 var SearchSchema = new Schema({
   searchQuery: {type: String, required: true},
-  ads: [{type: ObjectId, Ref: 'Ad'}],
-  createdAt: {type: Date, required: true}
+  ads: [{type: ObjectId, Ref: 'Ad'}]
 },{timestamps: true});
 
 

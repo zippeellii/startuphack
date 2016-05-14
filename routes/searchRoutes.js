@@ -1,8 +1,8 @@
 /*-----Handles the routing for a search requests-----*/
 var Search = require('../dbmodels/searchModel');
 var Promise = require('bluebird');
-//var traderaApi = require('../api/traderaApi');
-//var ebayApi = require('../api/ebayApi');
+var traderaApi = require('../api/traderaApi');
+var ebayApi = require('../api/ebay-api');
 
 module.exports = function(app, express) {
   var router = express.Router();
@@ -40,6 +40,11 @@ module.exports = function(app, express) {
         isAuction: false
 
       }
+      //var traderaQuery = traderaApi.search(req.params.searchQuery);
+      //var ebayQuery = ebayApi.search(req.params.searchQuery);
+      //var apiQueries = Promise.all(traderaQuery, ebayQuery);
+
+      //apiQueries.then()
       dummyObjects[0] = dummyObject;
       return res.status(200).send(dummyObjects);
 
@@ -53,11 +58,7 @@ module.exports = function(app, express) {
           //This query has exists and we can use the result
         }
         else{
-          //var traderaQuery = traderaApi.search(req.params.searchQuery);
-          //var ebayQuery = ebayApi.search(req.params.searchQuery);
-          //var apiQueries = Promise.all(traderaQuery, ebayQuery);
 
-          //apiQueries.then()
         }
       });
 
