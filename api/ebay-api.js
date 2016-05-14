@@ -12,7 +12,7 @@ var defaultOptions = {
   maxPrice: 1000, 
   locatedIn: 'US',
   pageNumber: 1, 
-  entriesPerPage: 50
+  entriesPerPage: 10
 };
   /*
    *
@@ -52,15 +52,15 @@ function search(query, opt){
           'params' : params,
           'sandbox' : true
     };
+
+
     ebay.xmlRequest(options, function(err, res){
-      
       results = res.searchResult.item;
       normaliseAndSaveResult(results, query, function(err, searchObj){
+        console.log("hej");
         if(err){
-          console.log(err);
           reject(err);
         }else {
-          console.log(searchObj);
           resolve(searchObj);
         }
       });
@@ -70,7 +70,7 @@ function search(query, opt){
 
 
 function normaliseAndSaveResult(items, query, callback){
-  ads = [];
+  console.log("hej");
   async.map(items, saveAd, function(err, res){
     if(err){
       callback(err, null);
@@ -92,7 +92,6 @@ function saveAd(item, callback){
   var adBody = {
     name: item.title,
     image: item.galleryURL,
-    description: "lol",
     price: item.sellingStatus.currentPrice,
     fromSite: "Ebay",
     city: loc[0],
@@ -106,8 +105,8 @@ function saveAd(item, callback){
   });
 
 }
-
 search("iPhone", defaultOptions).then(function(response){
+  console.log("hej");
   console.log(response);
 }, function(error){
   console.log(error);
