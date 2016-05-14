@@ -13,8 +13,6 @@ var request = '<?xml version="1.0" encoding="utf-8"?>' +
   '<soap:Body>' +
     '<Search xmlns="http://api.tradera.com">' +
       '<query>[SEARCH]</query>' +
-      '<PriceMinimum>[MINPRICE]</PriceMinimum>' +
-      '<PriceMaximum>[MAXPRICE]</PriceMaximum>' +
       '<PageNumber>[PAGENUMBER]</PageNumber>' +
       '<OrderBy>Relevance</OrderBy>' +
       '<ItemCondition>OnlySecondHand</ItemCondition>' +
@@ -28,7 +26,5 @@ module.exports = function(appId, appKey, options) {
   .replace("[APPID]", appId)
   .replace("[APIKEY]", appKey)
   .replace("[SEARCH]", options.searchQuery)
-  .replace("[PAGENUMBER]", options.pageNumber)
-  .replace("[MINPRICE]", options.minPrice)
-  .replace("[MAXPRICE]", options.maxPrice);
+  .replace("[PAGENUMBER]", options.pageNumber);
 }

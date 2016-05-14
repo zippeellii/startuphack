@@ -61,8 +61,6 @@ exports.search = function(searchId, searchOptions) {
     }
 
     searchOptions.pageNumber = searchOptions.pageNumber || 1;
-    searchOptions.minPrice = searchOptions.minPrice || 0;
-    searchOptions.maxPrice = searchOptions.maxPrice || 0;
 
     var body = traderaRequestBody(config.traderaAppId,
       config.traderaAppKey,
@@ -91,13 +89,22 @@ exports.search = function(searchId, searchOptions) {
         var isAuction = item.ItemType[0].indexOf("Auction") > -1;
         var price = isNaN(item.BuyItNowPrice[0]) ? item.NextBid[0] : item.BuyItNowPrice[0];
 
-        if(searchOptions.minPrice != 0 && price < searchOptions.minPrice) {
+        if(isNaN(price)){
+          console.log("incorrect price", price);
+        }
+
+        console.log(searchOptions.minPrice, price);
+
+        if(searchOptions.minPrice && price < searchOptions.minPrice) {
+          console.log("price is to low", price);
           return null;
         }
 
-        if(isNaN(price)){
-          console.log("incorrect price", price);
-        } 
+        if(searchOptions.maxPrice && price > searchOptions.maxPrice) {
+          console.log("price is to high", price);
+          return null;
+        }
+
 
         var adBody = {
           name : item.ShortDescription[0],
