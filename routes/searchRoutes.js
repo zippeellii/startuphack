@@ -11,19 +11,19 @@ module.exports = function(app, express) {
       //Indexing variables
       var index, count;
       //Must have a search query
-      if(!req.params.searchQuery){
+      if(!req.query.searchQuery){
         return res.status(400).send('Must specify a searchQuery');
       }
-      if(!req.params.index){
+      if(!req.query.index){
         return res.status(400).send('Must specify index');
       }
-      if(!req.params.count){
+      if(!req.query.count){
         return res.status(400).send('Must specify count');
       }
-      if(req.params.minPrice) minPrice = req.params.minPrice;
-      if(req.params.maxPrice) maxPrice = req.params.maxPrice;
+      if(req.query.minPrice) minPrice = req.query.minPrice;
+      if(req.query.maxPrice) maxPrice = req.query.maxPrice;
 
-      Search.findOne({searchQuery: req.params.searchQuery}).populate('ads').exec(function(err, query){
+      Search.findOne({searchQuery: req.query.searchQuery}).populate('ads').exec(function(err, query){
         if(err){
           res.status(400).send('Internal problem');
         }
