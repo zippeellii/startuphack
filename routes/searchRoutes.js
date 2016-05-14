@@ -24,13 +24,23 @@ module.exports = function(app, express) {
       if(!req.query.count){
         return res.status(400).send('Must specify count');
       }
-      if(req.query.minPrice) minPrice = req.query.minPrice;
-      if(req.query.maxPrice) maxPrice = req.query.maxPrice;
+      var match = {};
+      //Handle filtering on max and minPrice
+      if(req.query.minPrice || req.query.maxPrice){
+        match = { price: {} };
+        if(req.query.minPrice) match.price.$gt = req.query.minPrice;
+        if(req.query.maxPrice) match.price.$lt = req.query.maxPrice;
+      }
 
-      Search.findOne({searchQuery: req.query.searchQuery}).populate({path: 'ads', model: 'Ad'}).exec(function(err, query){
+
+
+      console.log(match);
+
+      Search.findOne({searchQuery: req.query.searchQuery}).populate({path: 'ads', model: 'Ad', match}).exec(function(err, query){
         console.log('Query done');
         if(err){
-          res.status(400).send('Internal problem');
+          console.log(err);
+          return res.status(400).send('Internal problem');
         }
         if(query){
           console.log('Search was found');
@@ -48,7 +58,7 @@ module.exports = function(app, express) {
             var apiQueries = Promise.all([ebayQuery, traderaQuery]);
 
             apiQueries.then(function(dataArray){
-              Search.findById(data._id).populate({path: 'ads', model: 'Ad'}).exec(function(err, model){
+              Search.findById(data._id).populate({path: 'ads', model: 'Ad', match}).exec(function(err, model){
                 return res.status(200).send(model.ads);
               })
             })
