@@ -55,7 +55,7 @@ exports.search = function(searchId, searchOptions) {
 
   return new Promise((resolve, reject) => {
 
-    if(searchOptions.country && searchOptions.country != "SE") {
+    if(searchOptions.country && searchOptions.country === "US") {
       resolve(null);
       return;
     }
