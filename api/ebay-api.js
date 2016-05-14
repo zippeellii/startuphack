@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //libs
 var ebay = require('ebay-api');
 var async = require('async');
@@ -8,17 +7,21 @@ var async = require('async');
 var appId = "FransHol-Selleri-SBX-8d32f3572-74249cb1";
 var AdDb = require('../dbmodels/admodel.js');
 var SearchDB = require('../dbmodels/searchModel.js');
-var defaultOptions = {
-  minPrice: 0, 
-  maxPrice: 1000, 
-  locatedIn: 'US',
-  pageNumber: 1, 
-  entriesPerPage: 10
-};
 
-function search(query, opt){
+
+var exports = module.exports;
+
+exports.search = function(query, opt){
 
   return new Promise(function(resolve, reject){
+    var defaultOptions = {
+      minPrice: 0,
+      maxPrice: 1000,
+      locatedIn: 'US',
+      pageNumber: 1,
+      entriesPerPage: 10
+    };
+    opt = opt || {};
 
     var minPrice        = opt.minPrice || defaultOptions.minPrice;
     var maxPrice        = opt.maxPrice || defaultOptions.maxPrice;
@@ -59,10 +62,10 @@ function search(query, opt){
       if(err){
         reject(err);
       }
-      
+
       var ads = results.map(item => {
         //var isAuction = true
-        //var buyItNowPrice = 
+        //var buyItNowPrice =
 
         var loc = item.location.split(",");
 
@@ -98,6 +101,3 @@ function search(query, opt){
     });
   });
 }
-
-module.exports.search;
-

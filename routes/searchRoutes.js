@@ -40,11 +40,7 @@ module.exports = function(app, express) {
         isAuction: false
 
       }
-      var traderaQuery = traderaApi.search(req.query.searchQuery);
-      var ebayQuery = ebayApi.search(req.params.searchQuery);
-      //var apiQueries = Promise.all(traderaQuery, ebayQuery);
 
-      //apiQueries.then()
       dummyObjects[0] = dummyObject;
       return res.status(200).send(dummyObjects);
 
@@ -58,7 +54,19 @@ module.exports = function(app, express) {
           //This query has exists and we can use the result
         }
         else{
+          var search = new Search();
+          search.name = req.query.searchQuery;
+          search.save(function(err, data){
+            var traderaQuery = traderaApi.search(req.query.searchQuery, data._id);
+            var ebayQuery = ebayApi.search(req.query.searchQuery, data._id);
+            var apiQueries = Promise.all([traderaQuery, ebayQuery]);
 
+            apiQueries.then(function(dataArray){
+              Search.findById(data._id).exec(function(err, models){
+                console.log(models);
+              })
+            })
+          })
         }
       });
 

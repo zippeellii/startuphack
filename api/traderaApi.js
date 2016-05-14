@@ -35,7 +35,6 @@ function htmlSpecialCharacters(text) {
 
 function parseResult(response, callback) {
     var data = htmlSpecialCharacters(response);
-    console.log('Parse: ' + data);
     parseString(data, (err, parsed) => {
         if(err) {
           callback(err, null);
