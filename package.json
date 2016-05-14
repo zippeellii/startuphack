@@ -21,5 +21,8 @@
     "express": "^4.13.4",
     "http": "0.0.0",
     "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "ebay-api": "^1.13.0"
   }
 }
