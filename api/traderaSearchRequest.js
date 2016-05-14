@@ -15,6 +15,7 @@ var request = '<?xml version="1.0" encoding="utf-8"?>' +
       '<SearchWords>[SEARCH]</SearchWords>' +
       '[MINPRICE]' +
       '[MAXPRICE]' +
+      '[MAXPRICE2]' +
       '<categoryId>0</categoryId>' +
       '<pageNumber>[PAGENUMBER]</pageNumber>' +
       '<orderBy>Relevance</orderBy>' +
@@ -30,6 +31,6 @@ module.exports = function(appId, appKey, search, options) {
   .replace("[APIKEY]", appKey)
   .replace("[SEARCH]", search)
   .replace("[PAGENUMBER]", options.pageNumber)
-  .replace("[MINPRICE]", options.minPrice)
-  .replace("[MAXPRICE]", options.maxPrice);
+  .replace("[MAXPRICE]", options.maxPrice ? "<BuyItNowPrice>" + options.maxPrice +"</BuyItNowPrice>")
+  .replace("[MAXPRICE2]", options.maxPrice ? "<MaxBid>" + options.maxPrice +"</MaxBid>"):
 }
