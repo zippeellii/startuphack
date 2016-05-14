@@ -95,12 +95,14 @@ exports.search = function(searchId, searchOptions) {
 
         console.log(searchOptions.minPrice, price);
 
-        if(searchOptions.minPrice && price < searchOptions.minPrice) {
+        comparePrice = parseFloat(price);
+
+        if(searchOptions.minPrice && comparePrice < searchOptions.minPrice) {
           console.log("price is to low", price);
           return null;
         }
 
-        if(searchOptions.maxPrice && price > searchOptions.maxPrice) {
+        if(searchOptions.maxPrice && comparePrice > searchOptions.maxPrice) {
           console.log("price is to high", price);
           return null;
         }
