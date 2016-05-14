@@ -47,48 +47,62 @@ function parseResult(response, callback) {
 
 var search = function(query, searchOptions) {
 
+  console.log("search");
+
+  searchOptions = searchOptions || {};
+
   return new Promise((resolve, reject) => {
-    resolve("");
-  });
+    
 
-  searchOptions.pageNumber = searchOptions.pageNumber || 1;
-  searchOptions.orderBy = earchOptions.orderBy || "Relevance";
+    searchOptions.pageNumber = searchOptions.pageNumber || 1;
+    searchOptions.orderBy = searchOptions.orderBy || "Relevance";
 
-  var body = traderaRequestBody(config.traderaAppId, config.traderaAppKey, query, pageNumber, orderBy);
+    var body = traderaRequestBody(config.traderaAppId, 
+      config.traderaAppKey, 
+      query,
+      searchOptions.pageNumber,
+      searchOptions.orderBy);
 
-  traderaRequest(body, (err, result) => {
+    traderaRequest(body, (err, result) => {
 
-    if(err) {
+      if(err) {
 
-      callback(err, null);
-      return;
-    }
-
-    //fs.writeFileSync('./data.json', util.inspect(result) , 'utf-8');
-
-    var ads = result.map(item => {
-
-      var isAuction = item.ItemType[0].indexOf("Auction") > -1
-
-      console.log(item);
-      var adBody = {
-        name : item.ShortDescription[0],
-        image: itemThumnailLink[0],
-        price: 77,
-        fromSite: "tradera",
-        url:"http://www.tradera.com/item/" + item.Id[0],
-        currency:"SEK",
-        isAuction: isAuction
-
+        reject(err);
+        return;
       }
 
-      var ad = new AdModel();
+      //fs.writeFileSync('./data.json', util.inspect(result) , 'utf-8');
 
-      ad.name = item.ShortDescription[0];
-    })
+      var ads = result.map(item => {
+
+        var isAuction = item.ItemType[0].indexOf("Auction") > -1
+        var buyItNowPrice = item.ItemType[0] !== "Auction";
+
+        console.log(item);
+        var adBody = {
+          name : item.ShortDescription[0],
+          image: item.ThumbnailLink[0],
+          price: buyItNowPrice ? item.BuyItNowPrice[0] : item.NextBid[0],
+          fromSite: "tradera",
+          url:"http://www.tradera.com/item/" + item.Id[0],
+          currency:"SEK",
+          isAuction: isAuction
+
+        }
+
+        var ad = new AdModel(adBody);
+
+        ad.save();
+
+        return ad;
+        
+      });
+
+      resolve(ads);
+
+    });
 
   });
-
 }
 
 function traderaRequest(body, callback) {
@@ -110,14 +124,5 @@ function traderaRequest(body, callback) {
     });
   });
 }
-
-var promise = search("iphone");
-
-promise.then(res => {
-  console.log(res);
-});
-
-
-
 
 module.exports = search;
