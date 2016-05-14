@@ -7,6 +7,8 @@ var util = require('util');
 var traderaRequestBody = require('./traderaSearchRequest');
 var AdModel = require('../dbmodels/admodel');
 
+var exports = module.exports;
+
 var post_options = {
       host: 'http://api.tradera.com',
       port: '80',
@@ -32,33 +34,33 @@ function htmlSpecialCharacters(text) {
 
 function parseResult(response, callback) {
     var data = htmlSpecialCharacters(response);
-
+    console.log('Parse: ' + data);
     parseString(data, (err, parsed) => {
         if(err) {
           callback(err, null);
         } else {
           var result = parsed['soap:Envelope']['soap:Body'][0].SearchResponse[0].SearchResult[0].Items;
 
-          callback(null, result);  
+          callback(null, result);
         }
-        
+
     });
 }
 
-var search = function(query, searchOptions) {
+exports.search = function(query, searchOptions) {
 
   console.log("search");
 
   searchOptions = searchOptions || {};
 
   return new Promise((resolve, reject) => {
-    
+
 
     searchOptions.pageNumber = searchOptions.pageNumber || 1;
     searchOptions.orderBy = searchOptions.orderBy || "Relevance";
 
-    var body = traderaRequestBody(config.traderaAppId, 
-      config.traderaAppKey, 
+    var body = traderaRequestBody(config.traderaAppId,
+      config.traderaAppKey,
       query,
       searchOptions.pageNumber,
       searchOptions.orderBy);
@@ -95,7 +97,7 @@ var search = function(query, searchOptions) {
         ad.save();
 
         return ad;
-        
+
       });
 
       resolve(ads);
@@ -114,7 +116,7 @@ function traderaRequest(body, callback) {
     if(error || response.statusCode != 200) {
       callback(error, null);
     }
-    
+
     result = parseResult(body, (err, result ) => {
       if (err) {
         callback(err, null)
@@ -124,5 +126,3 @@ function traderaRequest(body, callback) {
     });
   });
 }
-
-module.exports = search;

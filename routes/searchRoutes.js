@@ -40,8 +40,8 @@ module.exports = function(app, express) {
         isAuction: false
 
       }
-      //var traderaQuery = traderaApi.search(req.params.searchQuery);
-      //var ebayQuery = ebayApi.search(req.params.searchQuery);
+      var traderaQuery = traderaApi.search(req.query.searchQuery);
+      var ebayQuery = ebayApi.search(req.params.searchQuery);
       //var apiQueries = Promise.all(traderaQuery, ebayQuery);
 
       //apiQueries.then()
