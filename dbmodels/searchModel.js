@@ -4,8 +4,11 @@ var Schema = mongoose.Schema,
 
 var SearchSchema = new Schema({
   searchQuery: {type: String, required: true},
-  ads: [{type: ObjectId, Ref: 'Ad'}]
-});
+  ads: [{type: ObjectId, Ref: 'Ad'}],
+  minPrice: {type: Number, requiered: false},
+  maxPrice: {type: Number, required: false},
+  country: {type: String, enum: ['US', 'SE']}
+}, {timestamps: true});
 
 
 module.exports = mongoose.model('Search', SearchSchema);
