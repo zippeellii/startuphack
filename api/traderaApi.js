@@ -48,7 +48,7 @@ function parseResult(response, callback) {
     });
 }
 
-exports.search = function(query, searchOptions) {
+exports.search = function(query, searchId, searchOptions) {
 
   searchOptions = searchOptions || {};
 
@@ -101,22 +101,11 @@ exports.search = function(query, searchOptions) {
         return ad._id;
       });
 
-      var search = new SearchModel({
-        searchQuery: query,
-        ads: ads
-      });
-
-      search.save((err, res) => {
-        if(err) {
-          resolve(null);
-          return;
-        }
-
-        resolve(res._id);
-
-      });
-
-
+      SearchModel.findByIdAndUpdate(searchId,
+        {$pushAll: {"ads":ads}},
+        (err, search) => {
+          resolve(true);
+        });
     });
 
   });
