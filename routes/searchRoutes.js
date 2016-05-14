@@ -31,12 +31,14 @@ module.exports = function(app, express) {
         name: 'iPhone5',
         image: 'http://cdn.gsmarena.com/vv/reviewsimg/apple-iphone-5/thumb_.jpg',
         description: 'Really nice iPhone, not used at all',
-        price: '5000',
+        price: 5000,
         fromSite: 'www.tradera.se',
         city: 'Gothenburg',
         country: 'Sweden',
         url: 'www.google.com',
-        currency: 'SEK'
+        currency: 'SEK',
+        isAuction: false
+
       }
       dummyObjects[0] = dummyObject;
       return res.status(200).send(dummyObjects);
