@@ -15,5 +15,4 @@ var AdSchema = new Schema({
   currency: {type: String, required: false, enum: ['USD', 'SEK', 'UNKNOWN']}
 });
 
-
 module.exports = mongoose.model('Ad', AdSchema);
