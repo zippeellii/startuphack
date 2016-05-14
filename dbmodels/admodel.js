@@ -16,5 +16,4 @@ var AdSchema = new Schema({
   auctionPrice: {type: Number, required: false}
 });
 
-
 module.exports = mongoose.model('Ad', AdSchema);
