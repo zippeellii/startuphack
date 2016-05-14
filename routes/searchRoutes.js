@@ -53,7 +53,7 @@ module.exports = function(app, express) {
         else{
           var deleteQuery;
           if(query){
-            deleteQuery = query.delete().exec();
+            deleteQuery = query.remove();
           }
           console.log('Creates new');
           var search = new Search();
