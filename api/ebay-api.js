@@ -4,13 +4,13 @@ var async = require('async');
 
 
 
-var appId = "FransHol-Selleri-SBX-8d32f3572-74249cb1";
+var appId = "FransHol-Selleri-PRD-7d2ce5828-795d2a58";
 var AdDb = require('../dbmodels/admodel.js');
 var SearchDB = require('../dbmodels/searchModel.js');
 
 var exports = module.exports;
 
-exports.search = function(query, searchId, opt){
+function search(query, searchId, opt){
 
   return new Promise(function(resolve, reject){
     var defaultOptions = {
@@ -18,7 +18,7 @@ exports.search = function(query, searchId, opt){
       maxPrice: 1000,
       locatedIn: 'US',
       pageNumber: 1,
-      entriesPerPage: 10
+      entriesPerPage: 100
     };
     opt = opt || {};
 
@@ -32,7 +32,7 @@ exports.search = function(query, searchId, opt){
       keywords: [query],
 
       // add additional fields
-      outputSelector: ['AspectHistogram'],
+      outputSelector: ['PictureURLLarge', 'PictureURLSuperSize'],
 
       paginationInput: {
         entriesPerPage: entriesPerPage,
@@ -51,20 +51,26 @@ exports.search = function(query, searchId, opt){
           'opType' : 'findItemsByKeywords',
           'appId' : appId,
           'params' : params,
-          'sandbox' : true
+          'sandbox' : false
     };
 
 
     ebay.xmlRequest(options, function(err, res){
       results = res.searchResult.item;
-
+      console.log(results);
       if(err){
         reject(err);
       }
 
       var ads = results.map(item => {
-        //var isAuction = true
-        //var buyItNowPrice =
+        
+      var picture = item.galleryURL;
+
+      if(item.pictureURLSuperSize){
+        picture = item.pictureURLSuperSize;
+      }else if(item.pictureURLLarge) {
+        picture = item.pictureURLLarge;
+      }
 
         var loc = item.location.split(",");
 
@@ -98,3 +104,7 @@ exports.search = function(query, searchId, opt){
     });
   });
 }
+
+search("Macbook", 1)
+
+
