@@ -68,6 +68,8 @@ exports.search = function(searchId, searchOptions) {
       config.traderaAppKey,
       searchOptions);
 
+
+
     traderaRequest(body, (err, result) => {
 
 
@@ -78,6 +80,7 @@ exports.search = function(searchId, searchOptions) {
         return;
       }
 
+      console.log("tradera result", result);
 
       if(!result) {
         resolve(null);
@@ -106,6 +109,7 @@ exports.search = function(searchId, searchOptions) {
           fromSite: "Tradera",
           url:"http://www.tradera.com/item/" + item.Id[0],
           currency:"SEK",
+          country:"SE",
           isAuction: isAuction
 
         }
