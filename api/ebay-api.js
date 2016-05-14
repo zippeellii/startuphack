@@ -18,7 +18,7 @@ function search(query, searchId, opt){
       maxPrice: 1000,
       locatedIn: 'US',
       pageNumber: 1,
-      entriesPerPage: 100
+      entriesPerPage: 50
     };
     opt = opt || {};
 
