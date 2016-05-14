@@ -31,6 +31,6 @@ module.exports = function(appId, appKey, options) {
   .replace("[APIKEY]", appKey)
   .replace("[SEARCH]", options.searchQuery)
   .replace("[PAGENUMBER]", options.pageNumber)
-  .replace("[MAXPRICE]", options.maxPrice ? "<BuyItNowPrice>" + options.maxPrice +"</BuyItNowPrice>")
-  .replace("[MAXPRICE2]", options.maxPrice ? "<MaxBid>" + options.maxPrice +"</MaxBid>"):
+  .replace("[MAXPRICE]", options.maxPrice ? "<BuyItNowPrice>" + options.maxPrice +"</BuyItNowPrice>" : "")
+  .replace("[MAXPRICE2]", options.maxPrice ? "<MaxBid>" + options.maxPrice +"</MaxBid>" : "");
 }

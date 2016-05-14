@@ -92,7 +92,7 @@ exports.search = function(searchId, searchOptions) {
         }
 
         if(isNaN(price)){
-          console.log(item);
+          console.log("incorrect price", price);
         } 
 
         var adBody = {
