@@ -80,7 +80,7 @@ exports.search = function(searchId, searchOptions) {
         return;
       }
 
-      console.log(result);
+      console.log("tradera result", result);
 
       if(!result) {
         resolve(null);
