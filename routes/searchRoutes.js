@@ -51,6 +51,10 @@ module.exports = function(app, express) {
           return res.status(200).send(query.ads);
         }
         else{
+          var deleteQuery;
+          if(query){
+            deleteQuery = query.delete().exec();
+          }
           console.log('Creates new');
           var search = new Search();
           search.searchQuery = req.query.searchQuery;
@@ -61,7 +65,7 @@ module.exports = function(app, express) {
 
             var traderaQuery = traderaApi.search(data._id, match);
             var ebayQuery = ebayApi.search(data._id, match);
-            var apiQueries = Promise.all([ebayQuery, traderaQuery]);
+            var apiQueries = Promise.all([ebayQuery, traderaQuery, deleteQuery]);
 
             apiQueries.then(function(dataArray){
               Search.findById(data._id).populate({path: 'ads', model: 'Ad'}).exec(function(err, model){

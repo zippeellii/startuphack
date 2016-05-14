@@ -10,11 +10,7 @@ var SearchDB = require('../dbmodels/searchModel.js');
 
 var exports = module.exports;
 
-<<<<<<< HEAD
-exports.search = function(query, searchId, opt){
-=======
 exports.search = function(searchId, opt){
->>>>>>> 5ff0628c51942768562bf2cca3ef735c036b1b5a
 
   return new Promise(function(resolve, reject){
     var defaultOptions = {
@@ -33,7 +29,7 @@ exports.search = function(searchId, opt){
     var entriesPerPage  = opt.entriesPerPage || defaultOptions.entriesPerPage
 
     var params = {
-      keywords: [opt.SearchQuery],
+      keywords: [opt.searchQuery],
 
       // add additional fields
       outputSelector: ['PictureURLLarge', 'PictureURLSuperSize'],
@@ -60,13 +56,10 @@ exports.search = function(searchId, opt){
 
 
     ebay.xmlRequest(options, function(err, res){
-      console.log('RES: ' + res);
-      results = res.searchResult.item;
-      console.log(results);
       if(err){
-        reject(err);
+        return reject(err);
       }
-
+      results = res.searchResult.item;
       var ads = results.map(item => {
 
       var picture = item.galleryURL;
@@ -86,7 +79,7 @@ exports.search = function(searchId, opt){
           fromSite: "Ebay",
           city: loc[0],
           country: item.country,
-          url:item.viewItemURL,
+          url:item.country,
           currency:item.sellingStatus.currentPrice.currencyId,
           isAuction: false
         };
