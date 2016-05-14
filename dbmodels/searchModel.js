@@ -7,7 +7,7 @@ var SearchSchema = new Schema({
   ads: [{type: ObjectId, Ref: 'Ad'}],
   minPrice: {type: Number, requiered: false},
   maxPrice: {type: Number, required: false},
-  country: {type: String, enum: ['US', 'SE']}
+  country: {type: String, enum: ['US', 'SE', 'ALL']}
 }, {timestamps: true});
 
 
