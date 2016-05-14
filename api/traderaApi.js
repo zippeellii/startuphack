@@ -67,12 +67,9 @@ exports.search = function(searchId, searchOptions) {
       searchOptions);
 
 
-    console.log(body);
-
     traderaRequest(body, (err, result) => {
 
       if(err) {
-        console.log("tradera Error", err);
         reject(err);
         return;
       }
@@ -82,28 +79,19 @@ exports.search = function(searchId, searchOptions) {
         return;
       }
 
-      console.log("tradera numOf", result.length);
-
       var ads = result.map(item => {
 
         var isAuction = item.ItemType[0].indexOf("Auction") > -1;
         var price = isNaN(item.BuyItNowPrice[0]) ? item.NextBid[0] : item.BuyItNowPrice[0];
 
-        if(isNaN(price)){
-          console.log("incorrect price", price);
-        }
-
-        console.log(searchOptions.minPrice, price);
-
+      
         comparePrice = parseFloat(price);
 
         if(searchOptions.minPrice && comparePrice < searchOptions.minPrice) {
-          console.log("price is to low", price);
           return null;
         }
 
         if(searchOptions.maxPrice && comparePrice > searchOptions.maxPrice) {
-          console.log("price is to high", price);
           return null;
         }
 
