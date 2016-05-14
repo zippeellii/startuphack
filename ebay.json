@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 { itemId: '110172512598',
   title: 'Testing Iphone Revision',
   globalId: 'EBAY-US',
@@ -32,3 +33,41 @@ Merge branch 'master' of https://github.com/zippeellii/startuphack-backend
   condition: { conditionId: '1000', conditionDisplayName: 'New' },
   isMultiVariationListing: 'true',
   topRatedListing: 'false' }
+=======
+{itemId: '110091092941',
+    title: 'Canon PowerShot SD1200 IS Digital ELPH 10.0 MP Digit...',
+    globalId: 'EBAY-US',
+    primaryCategory: { categoryId: '31388', categoryName: 'Digital Cameras' },
+    galleryURL: 'http://thumbs2.sandbox.ebaystatic.com/m/mQdS_7gry0VJVlMRj06KGtw/140.jpg',
+    viewItemURL: 'http://cgi.sandbox.ebay.com/Canon-PowerShot-SD1200-Digital-ELPH-10-0-MP-Digit-/110091092941',
+    productId: { _: '100106371', '$': [Object] },
+    paymentMethod: 'PayPal',
+    autoPay: 'false',
+    postalCode: '95125',
+    location: 'San Jose,CA,USA',
+    country: 'US',
+    shippingInfo:
+     { shippingServiceCost: [Object],
+       shippingType: 'Free',
+       shipToLocations: 'US',
+       expeditedShipping: 'true',
+       oneDayShippingAvailable: 'false',
+       handlingTime: '3' },
+    sellingStatus:
+     { currentPrice: [Object],
+       convertedCurrentPrice: [Object],
+       sellingState: 'Active',
+       timeLeft: 'P19DT4H12M30S' },
+    listingInfo:
+     { bestOfferEnabled: 'false',
+       buyItNowAvailable: 'false',
+       startTime: '2011-07-29T10:59:39.000Z',
+       endTime: '2016-06-02T11:04:39.000Z',
+       listingType: 'FixedPrice',
+       gift: 'false' },
+    returnsAccepted: 'true',
+    condition: { conditionId: '1000', conditionDisplayName: 'New' },
+    isMultiVariationListing: 'false',
+    topRatedListing: 'false' }
+}
+>>>>>>> 41d075a833eaadcd2ca492a5e51e93d4788b8d9d
