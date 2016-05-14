@@ -11,7 +11,9 @@ var AdSchema = new Schema({
   city: {type: String, required: false},
   country: {type: String, required: false},
   image: {type: String, required: false},
-  url: {type:String, required: true}
+  url: {type: String, required: true},
+  currency: {type: String, required: false, enum: ['USD', 'SEK', 'UNKNOWN']}
 });
+
 
 module.exports = mongoose.model('Ad', AddSchema);
