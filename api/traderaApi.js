@@ -70,8 +70,10 @@ exports.search = function(searchId, searchOptions) {
 
     traderaRequest(body, (err, result) => {
 
-      if(err) {
 
+
+      if(err) {
+        console.log("tradera Error", err);
         reject(err);
         return;
       }
@@ -81,6 +83,8 @@ exports.search = function(searchId, searchOptions) {
         resolve(null);
         return;
       }
+
+      console.log("tradera numOf", result.length);
 
       var ads = result.map(item => {
 
@@ -92,7 +96,7 @@ exports.search = function(searchId, searchOptions) {
         }
 
         if(isNaN(price)){
-          console.log(item);
+          console.log("incorrect price", price);
         } 
 
         var adBody = {
