@@ -6,6 +6,7 @@ var util = require('util');
 
 var traderaRequestBody = require('./traderaSearchRequest');
 var AdModel = require('../dbmodels/admodel');
+var SearchModel = require('../dbmodels/searchModel');
 
 var post_options = {
       host: 'http://api.tradera.com',
@@ -47,8 +48,6 @@ function parseResult(response, callback) {
 
 var search = function(query, searchOptions) {
 
-  console.log("search");
-
   searchOptions = searchOptions || {};
 
   return new Promise((resolve, reject) => {
@@ -73,12 +72,16 @@ var search = function(query, searchOptions) {
 
       //fs.writeFileSync('./data.json', util.inspect(result) , 'utf-8');
 
+      if(!result) {
+        resolve(null);
+        return;
+      }
+
       var ads = result.map(item => {
 
         var isAuction = item.ItemType[0].indexOf("Auction") > -1
         var buyItNowPrice = item.ItemType[0] !== "Auction";
 
-        console.log(item);
         var adBody = {
           name : item.ShortDescription[0],
           image: item.ThumbnailLink[0],
@@ -94,11 +97,25 @@ var search = function(query, searchOptions) {
 
         ad.save();
 
-        return ad;
+        return ad._id;
         
       });
 
-      resolve(ads);
+      var search = new SearchModel({
+        searchQuery: query,
+        ads: ads
+      });
+
+      search.save((err, res) => {
+        if(err) {
+          resolve(null);
+          return;
+        }
+
+        resolve(res._id);
+
+      });
+
 
     });
 
@@ -125,4 +142,4 @@ function traderaRequest(body, callback) {
   });
 }
 
-module.exports = search;
+module.exports.search;
