@@ -15,7 +15,7 @@ function search(query, searchId, opt){
   return new Promise(function(resolve, reject){
     var defaultOptions = {
       minPrice: 0,
-      maxPrice: 1000,
+      maxPrice: 100000,
       locatedIn: 'US',
       pageNumber: 1,
       entriesPerPage: 50
