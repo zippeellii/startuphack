@@ -69,7 +69,12 @@ module.exports = function(app, express) {
 
             apiQueries.then(function(dataArray){
               Search.findById(data._id).populate({path: 'ads', model: 'Ad'}).exec(function(err, model){
-                return res.status(200).send(model.ads);
+                res.status(200).send(model.ads);
+                if(dataArray[2] && dataArray[2].ads){
+                  dataArray[2].ads.map(function(data){
+                    data.remove();
+                  })
+                }
               })
             })
           })
