@@ -16,9 +16,9 @@ var request = '<?xml version="1.0" encoding="utf-8"?>' +
       '[MINPRICE]' +
       '[MAXPRICE]' +
       '[MAXPRICE2]' +
-      '<categoryId>0</categoryId>' +
-      '<pageNumber>[PAGENUMBER]</pageNumber>' +
-      '<orderBy>Relevance</orderBy>' +
+      '<CategoryId>0</CategoryId>' +
+      '<PageNumber>[PAGENUMBER]</PageNumber>' +
+      '<OrderBy>Relevance</OrderBy>' +
       '<ItemCondition>OnlySecondHand</ItemCondition>' +
     '</Search>' +
   '</soap:Body>' +
