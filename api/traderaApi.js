@@ -4,7 +4,7 @@ var request = require('request')
 var config = require("../config")
 
 var traderaRequest = require('./traderaSearchRequest')
-var AdModel = requure('../dbmodels/admodel')
+var AdModel = require('../dbmodels/admodel')
 
 var post_options = {
       host: 'http://api.tradera.com',
@@ -60,6 +60,9 @@ function search(query, pageNumber, orderBy, callback) {
       return;
     }
 
+    var ads = result.map(item => {
+      console.log(item);
+    })
 
   })
 
@@ -85,18 +88,8 @@ function traderaRequest(body, callback) {
 }
 
 search("iphone", null, null, (err, result) => {
-  console.log(err, result);
+  //console.log(err, result);
+  console.log(err);
 });
 
-/*fs.readFile('../tradera.xml', 'utf-8',(err, data) => {
-  if(err) {
-      console.log(err);
-  }
-  data = htmlSpecialCharacters(data);
-  parseString(data, (err, parsed) => {
-      console.log(parsed['soap:Envelope']['soap:Body'][0].SearchResponse[0].SearchResult);
-
-  });
-
-});*/
 
