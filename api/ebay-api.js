@@ -1,48 +1,114 @@
+//libs
 var ebay = require('ebay-api');
-var appId = "FransHol-Selleri-SBX-8d32f3572-74249cb1";
+var async = require('async');
 
+
+
+var appId = "FransHol-Selleri-SBX-8d32f3572-74249cb1";
+var AdDb = require('../dbmodels/admodel.js');
+var SearchDB = require('../dbmodels/searchModel.js');
+var defaultOptions = {
+  minPrice: 0, 
+  maxPrice: 1000, 
+  locatedIn: 'US',
+  pageNumber: 1, 
+  entriesPerPage: 50
+};
   /*
    *
    */
-function searchEbay(query, minPrice = 0, maxPrice = 1000, locatedIn = 'US', pageNumber = 1, entriesPerPage = 50){
+function search(query, opt){
 
-  var params = {
-    keywords: [query],
+  return new Promise(function(resolve, reject){
 
-    // add additional fields
-    outputSelector: ['AspectHistogram'],
+    var minPrice        = opt.minPrice || defaultOptions.minPrice;
+    var maxPrice        = opt.maxPrice || defaultOptions.maxPrice;
+    var locatedIn       = opt.locatedIn || defaultOptions.locatedIn;
+    var pageNumber      = opt.pageNumber || defaultOptions.pageNumber;
+    var entriesPerPage  = opt.entriesPerPage || defaultOptions.entriesPerPage
 
-    paginationInput: {
-      entriesPerPage: entriesPerPage,
-      pageNumber: pageNumber
-    },
+    var params = {
+      keywords: [query],
 
-    itemFilter: [
-      {name: 'MinPrice', value: minPrice},
-      {name: 'MaxPrice', value: maxPrice},
-      {name: 'LocatedIn', value: locatedIn}
-    ]
-  };
+      // add additional fields
+      outputSelector: ['AspectHistogram'],
 
-  var options = {
-        'serviceName' : 'Finding',
-        'opType' : 'findItemsByKeywords',
-        'appId' : appId,
-        'params' : params,
-        'sandbox' : true
-  };
-  ebay.xmlRequest(options, function(err, res){
-        //console.log(res.searchResult.item);
-        results = res.searchResult.item;
-        for(result in results){
-          console.log(results[result]);
+      paginationInput: {
+        entriesPerPage: entriesPerPage,
+        pageNumber: pageNumber
+      },
+
+      itemFilter: [
+        {name: 'MinPrice', value: minPrice},
+        {name: 'MaxPrice', value: maxPrice},
+        {name: 'LocatedIn', value: locatedIn}
+      ]
+    };
+
+    var options = {
+          'serviceName' : 'Finding',
+          'opType' : 'findItemsByKeywords',
+          'appId' : appId,
+          'params' : params,
+          'sandbox' : true
+    };
+    ebay.xmlRequest(options, function(err, res){
+      
+      results = res.searchResult.item;
+      normaliseAndSaveResult(results, query, function(err, searchObj){
+        if(err){
+          console.log(err);
+          reject(err);
+        }else {
+          console.log(searchObj);
+          resolve(searchObj);
         }
+      });
+    });
   });
 }
 
 
-function normaliseResult(items){
+function normaliseAndSaveResult(items, query, callback){
+  ads = [];
+  async.map(items, saveAd, function(err, res){
+    if(err){
+      callback(err, null);
+    }else {
+      var search = new SearchDB();
+      search.searchQuery = query;
+      search.ads = res;
+      search.save(function(err, searchObj){
+        callback(err, searchObj);
+      });
+    }
+  });
+}
+
+
+function saveAd(item, callback){
+  var loc = item.location.split(",");
+
+  var adBody = {
+    name: item.title,
+    image: item.galleryURL,
+    description: "lol",
+    price: item.sellingStatus.currentPrice,
+    fromSite: "Ebay",
+    city: loc[0],
+    country: item.country,
+    url:item.country
+  };
+
+  var ad          = new AdDb(adBody);
+  ad.save(function(err, createdAd){
+    callback(createdAd)
+  });
 
 }
 
-searchEbay("iPhone");
+search("iPhone", defaultOptions).then(function(response){
+  console.log(response);
+}, function(error){
+  console.log(error);
+});
