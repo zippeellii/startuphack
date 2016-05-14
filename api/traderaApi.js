@@ -61,8 +61,8 @@ exports.search = function(searchId, searchOptions) {
     }
 
     searchOptions.pageNumber = searchOptions.pageNumber || 1;
-    searchOptions.minPrice = searchOptions.minPrice || "";
-    searchOptions.minPrice = searchOptions.maxPrice || "";
+    searchOptions.minPrice = searchOptions.minPrice || 0;
+    searchOptions.minPrice = searchOptions.maxPrice || 0;
 
     var body = traderaRequestBody(config.traderaAppId,
       config.traderaAppKey,
@@ -78,8 +78,6 @@ exports.search = function(searchId, searchOptions) {
         reject(err);
         return;
       }
-
-      console.log("tradera result", result);
 
       if(!result) {
         resolve(null);
@@ -143,7 +141,6 @@ function traderaRequest(body, callback) {
 
   request.post(options, (error, response, body) => {
 
-    console.log("tradera response", error, response);
     if(error || response.statusCode != 200) {
       callback(error, null);
     }
